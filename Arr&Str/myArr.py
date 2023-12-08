@@ -13,6 +13,9 @@ class myArr:
 
     def __str__(self) -> str:
         return f'{self.data}'
+    
+    def size(self) -> int:
+        return len(self.data)
 
     # sequential traversal of array from front to back
     def traverseFwd(self):
@@ -26,7 +29,7 @@ class myArr:
             print(self.data[i])
 
     # insert element el at idx
-    # no strict typing as the inserted element can be integer, string, obj, or float
+    # no strict typing for the inserted element el
     def insert(self, el, idx: Optional[int]):
         self.data.insert(idx, el)
 
@@ -34,11 +37,12 @@ class myArr:
     def delete(self, idx: Optional[int]):
         self.data.pop(idx)
 
-    # searches an element using the given idx or by the value
-    def search(self, idx: Optional[int], val=None):
+    # searches an element using the given idx or by the value using sequential search
+    def seqSearch(self, idx: Optional[int], val=None):
         maxidx = len(self.data) - 1
         for i in range(maxidx):
             if idx == i:
                 print(f'{self.data[i]} found @ {idx}')
             elif self.data[i] == val:
                 print(f'{val} found in data @ {idx}')
+                
