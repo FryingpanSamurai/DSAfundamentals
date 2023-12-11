@@ -16,6 +16,20 @@ class Array {
 
     Array(int sz) {
       size_ = sz;
+      data_ = new int[size_];
+    }
+
+    Array(initializer_list<int> values) {
+      size_ = values.size();
+      data_ = new int[size_];
+      int i = 0;
+      for (int value : values) {
+        data_[i++] = value;
+      }
+    }
+
+    ~Array() {
+      delete[] data_;
     }
 
     int size() const {
