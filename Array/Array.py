@@ -1,12 +1,11 @@
 from typing import Optional
 
-class myArr:
+class Array:
     """
     FUNCTION:   This is a class for arrays.
     DEF:        Element: single item stored in an array
                 Index:   location of an element in an array, from 0 to n-1 where n is elements in array
     INPUT:      data as <list/array>
-    OUTPUT:     print the entire array
     """
     def __init__(self, data: Optional[list]) -> None:
         self.data = data
@@ -19,7 +18,7 @@ class myArr:
 
     # sequential traversal of array from front to back
     def traverseFwd(self):
-        maxidx = len(self.data) - 1
+        maxidx = self.size() - 1
         for i in range(maxidx):
             print(self.data[i])
 
@@ -39,7 +38,7 @@ class myArr:
 
     # searches an element using the given idx or by the value using sequential search
     def seqSearch(self, idx: Optional[int], val=None):
-        maxidx = len(self.data) - 1
+        maxidx = self.size() - 1
         for i in range(maxidx):
             if idx == i:
                 print(f'{self.data[i]} found @ {idx}')
