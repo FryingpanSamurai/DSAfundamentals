@@ -55,8 +55,7 @@ class LinkedList_s:
     prev = self.data
     head = self.data.next
 
-    # switch for deletion handling
-    # default behavior: no params passed
+    # switch for deletion handling#
     if not idx and not key:
       # remove first node
       deleted = prev
