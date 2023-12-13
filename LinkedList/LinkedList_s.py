@@ -19,6 +19,7 @@ class LinkedList_s:
   
   def insert(self, idx: Optional[int], node: Optional[Node]):
     # algo
+    # 0. init vars
     # 1. traverse to idx
     # 2. assign node.next to temp
     # 3. assign node.next to new node
@@ -49,43 +50,27 @@ class LinkedList_s:
         return head
       else:
         head = head.next
-    
-  # no args: remove element at beginning
-  def delete(self, idx: Optional[int], key=None) -> Optional[Node]:
-    prev = self.data
-    head = self.data.next
+  
+  def delete(self, idx: int) -> Optional[Node]:
+    head = self.data
+    i = 0
 
-    # switch for deletion handling#
-    if not idx and not key:
-      # remove first node
-      deleted = prev
-      return head
-    # remove by key
-    elif not key:
-      while head:
-        if head.val == key:
-          return head
-        else:
-          head = head.next
-    # remove by idx
-    # algo
-    # 1. traverse LL to idx
-    # 2. once at idx, remove node from LL and return deleted node
-    elif not idx:
-      i = 0
-      while i != idx and head:
-        i += 1
-        head = head.next
-      
-      if i == idx and head:
-        deleted = head
-      
-    
+    # idx - 1... stop before the target
+    while i != idx-1:
+      i += 1
+      head = head.next
+    deleted = head.next
+
+    if deleted.next:
+      head.next = deleted.next
+
     return deleted
+    
+    
       
   
 if __name__ == "__main__":
   myLL = LinkedList_s(Node(1, Node(3, Node(5, Node(7, Node(9))))))
-  print(myLL)
-  myLL.delete(1)
+  myLL.delete(0)
   myLL.display()
+
