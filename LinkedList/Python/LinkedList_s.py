@@ -17,15 +17,17 @@ class LinkedList_s:
   def __str__(self) -> str:
     return f'Current Head: {self.data.val}, Next: {self.data.next}'
   
-  def insert(self, idx: Optional[int], node: Optional[Node]):
+  def insert(self, idx: Optional[int], node: Optional[Node]) -> Optional[Node]:
     # algo
+    # 0. init vars
     # 1. traverse to idx
     # 2. assign node.next to temp
     # 3. assign node.next to new node
     # 4. assign temp to new node.next
     i = 0
-    head = self.data
+    ptr = head = self.data
 
+    # traverse to index
     while i != idx:
       head = head.next
       i += 1
@@ -33,6 +35,7 @@ class LinkedList_s:
     temp = head.next
     head.next = node
     node.next = temp
+    self.data = ptr
 
   def display(self):
     head = self.data
@@ -50,42 +53,30 @@ class LinkedList_s:
       else:
         head = head.next
     
-  # no args: remove element at beginning
-  def delete(self, idx: Optional[int], key=None) -> Optional[Node]:
-    prev = self.data
-    head = self.data.next
+  # deletion: remove first member from the LL
+  # return deleted element?
+  # should I be implementing a try, except to handle the case where self.data is None or is one
+  def deletion(self) -> Optional[Node]:
+    # init var
+    head = self.data
 
-    # switch for deletion handling#
-    if not idx and not key:
-      # remove first node
-      deleted = prev
-      return head
-    # remove by key
-    elif not key:
-      while head:
-        if head.val == key:
-          return head
-        else:
-          head = head.next
-    # remove by idx
-    # algo
-    # 1. traverse LL to idx
-    # 2. once at idx, remove node from LL and return deleted node
-    elif not idx:
-      i = 0
-      while i != idx and head:
-        i += 1
-        head = head.next
-      
-      if i == idx and head:
-        deleted = head
-      
-    
+    # first element is deleted
+    deleted = head
+
+    self.data = head.next if head.next else None
     return deleted
+  
+  def delete(self, key=None):
+    # init vars
+    head = self.data
+
+
+    
+
       
   
 if __name__ == "__main__":
   myLL = LinkedList_s(Node(1, Node(3, Node(5, Node(7, Node(9))))))
   print(myLL)
-  myLL.delete(1)
+  myLL.insert(2, Node(4))
   myLL.display()
