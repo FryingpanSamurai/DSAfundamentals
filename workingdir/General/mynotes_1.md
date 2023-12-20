@@ -1,3 +1,6 @@
+***This study uses reference: ISBN: 9780273793243***
+*- Introduction to Programming & C++ by Y. Daniel Liang*
+
 # General Notes
 
 ## Assembly Language
@@ -30,6 +33,7 @@ Java is modeled after C++ and C# is also a subset of C++.
 - (): used with functions
 - {}: enotes block to enclose statements or for arrays
 - //: single line comment
+- /**/: block level comment
 - <<: stream insertion operator outputs to console (cout, cerr)
 - " ": wraps a string
 - ;: statement terminator marks end of statement or block
@@ -47,3 +51,13 @@ Java is modeled after C++ and C# is also a subset of C++.
 - Links machine code file with the supporting library files to form an executable
 - machine code file saved as .obj, executable as .exe
 - UNIX machine code file saved as .o, executable do not have file extensions
+
+## Errors
+### Syntax
+Errors caught by the compiler.
+### Runtime
+Error that will terminate the program if encountered an impossible task.
+IE User input for an erroneous variable type.
+IE File not found at a path.
+### Logic
+Error that is not easily caught, but rather an erroneous output
