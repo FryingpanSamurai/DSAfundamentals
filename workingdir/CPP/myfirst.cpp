@@ -16,5 +16,11 @@ int main() {
   // expressions can also be output to console as well as the solution
   cout << "(10.5 + 2 * 3) / (45 - 3.5) = ";
   cout << (10.5 + 2 * 3) / (45 - 3.5) << endl; // these two could be combined into one cout
+
+  double w, h;
+  cin >> w >> h;
+  cout << w * h;
+
+  const int SIZE = 20;
   return 0;
 }

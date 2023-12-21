@@ -8,23 +8,28 @@ using namespace std;
 */
 class Triangle {
   public:
-    float area(float s) {
-      return 1.732 * ((s*s)/4.0);
+    // constructor that accepts a float param
+    Triangle(float s) : side_(s) {}
+    
+    float area() {
+      return 1.732 * ((side_ * side_)/4.0);
     }
-    float perimeter(float s) {
-      return 3 * s;
+    float perimeter() {
+      return 3 * side_;
     }
+  private:
+    float side_;
 };
 
 int main() {
-  Triangle t;
   float side;
   cout << "Please enter side length: ";
   cin >> side;
+  Triangle t(side);
   cout << "Triangle with side legth: " << side << endl;
   cout << "Area: ";
-  cout << t.area(side) << endl;
+  cout << t.area() << endl;
   cout << "Perimeter: ";
-  cout << t.perimeter(side) << endl;
+  cout << t.perimeter() << endl;
   return 0;
 }

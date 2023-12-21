@@ -38,6 +38,26 @@ Java is modeled after C++ and C# is also a subset of C++.
 - " ": wraps a string
 - ;: statement terminator marks end of statement or block
 
+## C++ Numeric Types
+- short: -2^15 -> 2^15-1 | 16-bit signed
+- unsigned short: 0 -> 2^16-1 | 16-bit unsigned
+- int signed: -2^31 -> 2^31-1 | 32-bit
+- unsigned: 0 -> 2^32-1 | 32-bit unsigned
+- long: -2^31 -> 2^31-1 | 32-bit signed
+- unsigned long: 0 -> 2^32-1 | 32-bit unsigned
+- float: -3.4028235e^38 -> -1.4e^-45, 1.4e^-45 -> 3.4028235e^38
+- double: -1.7976931348623157e^308 -> -4.9e^-324, 4.9e^-324 -> 1.7976931348623157e^308
+- long double: -1.18e^4932 -> -3.37e^-4932, 3.37e^-4932 -> 1.18e^4932
+#### int
+- short, int, long: both signed and unsigned
+#### floating point
+- float, double, long double
+- double is double precision compared to float
+- long double is even more precise
+#### CONSTANTS
+- INT_MIN, INT_MAX, LONG_MIN, LONG_MAX, FLT_MIN, FLT_MAX, DBL_MIN, DBL_MAX
+- found in <limits> header file
+
 ## C++ Compiler Tasks
 - performs three tasks in sequence: preprocessor, compiler, linker
 ### Preprocessor
