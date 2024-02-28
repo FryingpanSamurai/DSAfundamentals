@@ -31,7 +31,7 @@ Java is modeled after C++ and C# is also a subset of C++.
 - #: used in preprocessor directives
 - <>: encloses a library name when used with #include
 - (): used with functions
-- {}: enotes block to enclose statements or for arrays
+- {}: denotes block to enclose statements or for arrays
 - //: single line comment
 - /**/: block level comment
 - <<: stream insertion operator outputs to console (cout, cerr)

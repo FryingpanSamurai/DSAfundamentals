@@ -18,7 +18,7 @@ int main() {
   cout << (10.5 + 2 * 3) / (45 - 3.5) << endl; // these two could be combined into one cout
 
   double w, h;
-  cin >> w >> h;
+  cin >> w >> h; // when cin multiple variables, input is space separated
   cout << w * h;
 
   const int SIZE = 20;
